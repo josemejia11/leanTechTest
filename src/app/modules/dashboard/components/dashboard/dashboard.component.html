@@ -1,0 +1,46 @@
+<div class="main-view">
+    <h1>Your Cities</h1>
+    <div class="dropdown">
+        <datalist id="suggestions">
+            <option [value]="city.name" *ngFor="let city of cities"> {{ city.name }} </option>
+        </datalist>
+        <input id="selectedCity" autoComplete="on" list="suggestions" placeholder="Search city..."/> 
+        <button type="button" class="btn search btn-outline-secondary" (click)="clickBtn()">Search</button>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div *ngFor="let city of selectedCities; let i = index" class="col">
+          <div class="card">
+            <div class="card-body text-center">
+                <button type="button" class="btn btn-light" (click)="removeCard(city)">X</button>
+                <h5 class="card-title"> {{ city.name | titlecase}} </h5>
+                <p class="card-text temp-number">{{ city.temp}}<span class="symbol">°</span></p>
+                <div>
+                    <div *ngIf="city.tempC < 19">
+                        <img  src="/assets/icons/coldWeather.svg" alt="" width="30" height="24" class="d-inline-block align-text-top"><span> Cold</span>
+                    </div>
+                    <div *ngIf="city.tempC > 19.1 && city.tempC < 26">
+                        <img src="/assets/icons/warmWeather.svg" alt="" width="30" height="24" class="d-inline-block align-text-top"><span> Warm</span>
+                    </div>
+                    <div *ngIf="city.tempC > 26.1">
+                        <img src="/assets/icons/hotWeather.svg" alt="" width="30" height="24" class="d-inline-block align-text-top"><span> Hot</span>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary update-btn" (click)="updateClick(city)">Update</button>
+
+                <div class="btn-group-vertical" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger btn-bunch" (click)=setCelsius(city)>C</button>
+                    <button type="button" class="btn btn-warning btn-bunch" (click)=setFarenheit(city)>F</button>
+                    <button type="button" class="btn btn-success btn-bunch" (click)=setKelvin(city)>K</button>
+                </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+</div>
+
+
+
+  

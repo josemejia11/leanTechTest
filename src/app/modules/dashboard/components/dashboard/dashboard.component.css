@@ -1,0 +1,53 @@
+.main-view{
+  margin-bottom: 100px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.search{
+  margin-left: 15px;
+}
+
+h1 {
+  color: orangered;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.row {
+  margin-top: 20px;
+}
+
+.btn-group-vertical {
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+.symbol {
+  font-size: 35px;
+  color: orangered;
+  align-content: flex-start;
+  vertical-align: top;
+}
+
+.temp-number {
+  color: orangered;
+  font-size: 80px;
+}
+
+.btn-primary {
+  background-color: orangered!important;
+  border-color:orangered!important;
+  margin-top: 15px;
+}
+
+.btn-light {
+  float: right;
+}
