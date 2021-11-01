@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     loadChildren: () =>
       import('./modules/dashboard/dashboard.module').then((i) => i.DashboardModule),
   },
-  { path: '**', pathMatch: 'full', redirectTo: '/home' }
+  { path: '**', pathMatch: 'full', redirectTo: '/' }
 ];
 
 @NgModule({
